@@ -9,7 +9,7 @@ import (
 )
 
 func InitPostgreSQL(DBConfig *DBConfig) *gorm.DB {
-	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=postgres search_path=%s port=%d sslmode=disable TimeZone=Asia/Shanghai",
+	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%d sslmode=disable TimeZone=Asia/Shanghai",
 		DBConfig.Host, DBConfig.UserName, DBConfig.Password, DBConfig.DBName, DBConfig.Port,
 	)
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
